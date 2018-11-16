@@ -103,6 +103,7 @@ form {
             font-family: 'Varela Round', sans-serif;
             font-weight: lighter;
         }
+
     </style>
 
 </head>
@@ -123,7 +124,7 @@ form {
             <center><div ng-repeat="comment in comments | orderBy: '-upvotes'" id = "comments">
                 Doggo: {{comment.title}} &nbsp&nbsp Owner: {{comment.owner}} <br>
                 <center><img ng-src="{{comment.url}}" id = "image" height = "400px" width = "400px"></center> <br>
-                <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span> {{comment.upvotes}} people like this <br>
+                <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span> {{comment.upvotes}} people like this doggo <br>
                 <div id = "spacer2"></div>
             </div>
             
