@@ -37,8 +37,8 @@ div, .div, #div {
 }
 
 form {
-            color: black;
-            font-size: 15px;
+            color: white;
+            font-size: 10px;
             font-family: 'Varela Round', sans-serif;
             font-weight: lighter;
         }
@@ -48,7 +48,7 @@ img {
 }
 
 button{
-  background: #404040;
+  background: #1a1a1a;
   color:#fff;
   border:none;
   position:relative;
@@ -106,11 +106,11 @@ form {
                 <div id = "spacer"></div>
                 <center><button type="submit">Add Doggo</button></center>
             </form></center>
-            <div ng-repeat="comment in comments | orderBy: '-upvotes'">
+            <center><div ng-repeat="comment in comments | orderBy: '-upvotes'">
                 Doggo: {{comment.title}} Owner: {{comment.owner}} <br>
                 <center><img ng-src="{{comment.url}}" id = "image" height = "400px" width = "400px"></center> <br>
                 <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span> {{comment.upvotes}} people like this <br>
-            </div>
+            </div></center>
         </div>
     </div>
     </div>
