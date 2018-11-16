@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Comments</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/comment.js"></script>
+
+</head>
+
+<body ng-app="comment" ng-controller="MainCtrl">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="page-header">
+                <h1>DogBook</h1>
+            </div>
+
+            <form ng-submit="addComment()" style="margin-top30px;">
+                <input placeholder="doggo name" type="text" ng-model="formContent"></input>
+                <input placeholder="doggo URL" type="text" ng-model="formURL"></input>
+                <input placeholder="Owner of doggo" type="text" ng-model="formOwner"></input>
+                <button type="submit">Add Comment</button>
+            </form>
+            <div ng-repeat="comment in comments | orderBy: '-upvotes'">
+                Doggo: {{comment.title}} Owner: {{comment.owner}} <br>
+                <img ng-src="{{comment.url}}"> <br>
+                <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span> {{comment.upvotes}} people like this <br>
+               
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
